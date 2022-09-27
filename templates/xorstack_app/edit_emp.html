@@ -1,0 +1,44 @@
+</head>
+
+<body>
+    <h1>Edit Employee</h1>
+     <div class="container">
+        <form action="edit_emp/{{ edit_e.id }}" method="post">
+            {% csrf_token %}
+
+        <hr>
+        <table border="1">
+            <tr>
+                <td>First name</td>
+                <td><input type="text" name="first_name" value="{{ edit_e.first_name }}"></td>
+            </tr>
+            <tr>
+                <td>Middle name</td>
+                <td><input type="text" name="middle_name" value="{{ edit_e.middle_name }}"></td>
+            </tr>
+            <tr>
+                <td>Last name</td>
+                <td><input type="text" name="last_name" value="{{ edit_e.last_name }}"></td>
+            </tr>
+            <tr>
+                <td>Salary</td>
+                <td><input type="text" name="salary" value="{{ edit_e.salary }}"></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><input type="text" name="phone" value="{{ edit_e.phone }}"></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td><input type="text" name="country" value="{{ edit_e.country }}"></td>
+            </tr>
+
+            <br>
+        </table>
+
+        <td><button type="submit"><a href="{% url 'update_emp' edit_e.id %}">update</a></button></td>
+
+    </form>
+    </div>
+</body>
+</html>
