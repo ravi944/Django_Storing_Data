@@ -41,64 +41,6 @@ def delete_emp(request, id):
     # return redirect('xorstack_app/home.html')
     return render(request,'xorstack_app/deleted_suc.html')
 
-####
-# def edit_emp(request, id):
-#     if request.method == 'POST':
-#         first_name = request.POST.get('first_name')
-#         middle_name = request.POST.get('middle_name')
-#         last_name = request.POST.get('last_name')
-#         salary = request.POST.get('salary')
-#         phone = request.POST.get('phono')
-#         country = request.POST.get('country')
-#
-#         edit_e=Employees.objects.get(pk=id)
-#         edit_e.first_name = first_name
-#         edit_e.middle_name = middle_name
-#         edit_e.last_name = last_name
-#         edit_e.salary = salary
-#         edit_e.phone = phone
-#         edit_e.country = country
-#
-#         edit_e.save()
-#
-#         return redirect(request, 'xorstack_app/home.html')
-#     else:
-#         edit_e=Employees.objects.get(pk=id)
-#         context = {
-#             'edit_e':edit_e,
-#         }
-#         return render(request,'xorstack_app/edit_emp.html',context)
-#
-#     return HttpResponse('Edited Succesfully')
-#
-#
-#
-# #
-# def update_emp(request,id):
-#     if request.method == 'POST':
-#         first_name = request.POST.get('first_name')
-#         middle_name = request.POST.get('middle_name')
-#         last_name = request.POST.get('last_name')
-#         salary = request.POST.get('salary')
-#         phone = request.POST.get('phono')
-#         country = request.POST.get('country')
-#         emps=Employees.object.all()
-#
-#
-#         emps = Employees.objects.get(pk=id)
-#         emps.first_name = first_name
-#         emps.middle_name = middle_name
-#         emps.last_name = last_name
-#         emps.salary = salary
-#         emps.phone = phone
-#         emps.country = country
-#
-#         emps.save()
-#
-#         return render('xorstack_app/up.html')
-#
-#     return render(request,'xorstack_app/home.html')
-###
 def update(request, id):
     mymember = Employees.objects.get(id=id)
     template = loader.get_template('update.html')
@@ -126,54 +68,4 @@ def updaterecord(request, id):
     member.country = country
     member.save()
     return render(request, 'xorstack_app/upd.html')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# def update_emp(request, id):
-#     if request.method == 'POST':
-#         emps = Employees.objects.get(pk=id)
-#         emps.save()
-#     else:
-#         edit_e = Employees.objects.get(pk=id)
-#         context = {
-#             'edit_e': edit_e,
-#         }
-#         return render(request, 'xorstack_app/edit_emp.html', context)
-
-
-# def update_emp(request, id):
-#     if request.method == 'POST':
-#         if request.method == 'POST':
-#             first_name = request.POST.get('first_name')
-#             middle_name = request.POST.get('middle_name')
-#             last_name = request.POST.get('last_name')
-#             salary = request.POST.get('salary')
-#             phone = request.POST.get('phono')
-#             country = request.POST.get('country')
-#
-#             emps=Employees(
-#                 id=id,
-#                 first_name=first_name,
-#                 last_name=last_name,
-#                 middle_name=middle_name,
-#                 salary=salary,
-#                 phone=phone,
-#                 country=country
-#             )
-#             emps.save()
-#             return redirect('/')
-#     return render(request,'xorstack_app/home.html')
-
 
